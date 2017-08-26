@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Downloading...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- meta name=viewport content="width=device-width, initial-scale=1" -->
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Georgia, Times New Roman, Times, serif;
+	font-size: 16px;
+	color: #3333FF;
+	font-weight: bold;
+}
+body {
+	background-color: #3399FF;
+}
+a:link {
+	text-decoration: none;
+	color: #000066;
+}
+a:visited {
+	text-decoration: none;
+	color: #000066;
+}
+a:hover {
+	text-decoration: underline;
+	color: #66FFFF;
+}
+a:active {
+	text-decoration: none;
+}
+a {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+.style1 {
+	color: #000099;
+	font-style: italic;
+}
+.style2 {color: #000099}
+-->
+</style>
+<script language="JavaScript">
+<!--
+function getParamsGET() {
+//alert(document.URL.toString());
+	var index = document.URL.indexOf('?');
+	var params = new Array();
+	if (index != -1) {
+		var pairs = document.URL.substring(index+1, document.URL.length).split('&');
+		for (var i=0; i<pairs.length; i++) {
+			nameVal = pairs[i].split('=');
+			params[nameVal[0]] = nameVal[1];
+		}
+	}
+	return params;
+}
+
+function startDownload(siteName)
+{
+	var url = "#";
+	switch(siteName){	// Javascript allows switch on Strings
+		case "main":
+			url = "download/ScreenSaverSummonInstall.zip";
+			break;
+		case "mirror1":
+	                url = "#";
+                        //// For handling Tripod's "referer must be itself" problem
+                        //frames['ifTripodDnld'].location.href = "http://members.tripod.com/my_world_1/summon/downloadNow2.html";
+                        //ifTripodDnld.src = "http://members.tripod.com/my_world_1/summon/downloadNow2.html";
+	                popUp("http://members.tripod.com/my_world_1/summon/downloadNow2.html");
+			break;
+		default:
+			alert("Unexpected download site name.\nPlease download manually by clicking one of the links on this page.");
+	}
+	window.location.href = url;
+}
+
+function popUp(URL)
+{
+    var winTripodDnld = window.open(URL, 'winnameTripodDnld', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0');
+}
+
+var params = getParamsGET();
+var siteName = unescape(params["siteName"]);
+//-->
+</script>
+<script type="text/javascript" src="script/tracking.js"></script>
+</head>
+
+<body onLoad="startDownload(siteName)">
+ <div align="center">
+   <p>If the download does not start automatically,<br>
+   please download manually by clicking one of the links below:</p>
+   <hr align="center" size="1">
+   <p><a href="download/ScreenSaverSummonInstall.zip">Main Site</a></p>
+   <p><a href="http://members.tripod.com/my_world_1/summon/downloadNow2.html">Mirror Site #1</a></p>
+   <p><a href="http://www.brothersoft.com/summon-the-screensaver-55597.html" target="_blank">BrotherSoft.com</a></p>
+   <p><a href="http://www.softpedia.com/get/Desktop-Enhancements/Other-Desktop-Enhancements/Summon-the-Screensaver.shtml" target="_blank">Softpedia.com</a></p>
+   <p><a href="http://www.softforall.com/Desktop/ShellDesktop/Summon_the_Screensaver03070084.htm" target="_blank">SoftForAll.com</a></p>
+<!--
+   <p><a href="javascript:alert('Will be available soon.');">Tucows</a></p>
+-->
+   <hr align="center" size="1">
+   <p>Thanks for downloading <span class="style1">Summon the Screensaver</span>,<br>
+   developed by <span class="style2">Jerry Lam @Blueboy</span>.</p>
+ </div>
+<p align="center">
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+<!-- 
+var sc_project=530422; 
+var sc_partition=3; 
+var sc_invisible=1; 
+//-->
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c4.statcounter.com/counter.php?sc_project=530422&amp;java=0&amp;invisible=1" alt="web tracker" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+</p>
+
+<!----- For handling Tripod's "referer must be itself" problem ----->
+<!--
+<p align="center">
+<iframe name="ifTripodDnld" id="ifTripodDnld" src="blank.html" style="border:none" width="0" height="0" scrolling="no"></iframe>
+</p>
+-->
+
+</body>
+</html>

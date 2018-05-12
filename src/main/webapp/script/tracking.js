@@ -5,7 +5,7 @@ var Tracking = {
 		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 		
-	  ga('create', 'UA-46259877-1', 'rhcloud.com');
+	  ga('create', 'UA-46259877-1', 'openshiftapps.com');
 	  ga('require', 'ecommerce', 'ecommerce.js');	//eCommerce
 	  ga('set', 'dimension1', Tracking.getCustTier());	// Custom Dimension
 	  ga('send', 'pageview');

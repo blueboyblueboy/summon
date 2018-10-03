@@ -42,53 +42,6 @@ a {
 .style2 {color: #000099}
 -->
 </style>
-<script language="JavaScript">
-<!--
-function getParamsGET() {
-//alert(document.URL.toString());
-	var index = document.URL.indexOf('?');
-	var params = new Array();
-	if (index != -1) {
-		var pairs = document.URL.substring(index+1, document.URL.length).split('&');
-		for (var i=0; i<pairs.length; i++) {
-			nameVal = pairs[i].split('=');
-			params[nameVal[0]] = nameVal[1];
-		}
-	}
-	return params;
-}
-
-function startDownload(siteName)
-{
-	var url = "#";
-	switch(siteName){	// Javascript allows switch on Strings
-		case "main":
-//			url = "download/ScreenSaverSummonInstall.zip";
-			url = "https://www.dropbox.com/s/mph6wjp06q5wu3s/ScreenSaverSummonInstall.zip?dl=1";
-			break;
-//		case "mirror1":
-//	                url = "#";
-//                        //// For handling Tripod's "referer must be itself" problem
-//                        //frames['ifTripodDnld'].location.href = "http://members.tripod.com/my_world_1/summon/downloadNow2.html";
-//                        //ifTripodDnld.src = "http://members.tripod.com/my_world_1/summon/downloadNow2.html";
-//	                popUp("http://members.tripod.com/my_world_1/summon/downloadNow2.html");
-//			break;
-		default:
-			alert("Unexpected download site name.\nPlease download manually by clicking one of the links on this page.");
-	}
-	window.location.href = url;
-}
-
-function popUp(URL)
-{
-    var winTripodDnld = window.open(URL, 'winnameTripodDnld', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0');
-}
-
-var params = getParamsGET();
-var siteName = unescape(params["siteName"]);
-//-->
-</script>
-<script type="text/javascript" src="script/tracking.js"></script>
 </head>
 
 <body onLoad="startDownload(siteName)">
@@ -96,7 +49,8 @@ var siteName = unescape(params["siteName"]);
    <p>If the download does not start automatically,<br>
    please download manually by clicking one of the links below:</p>
    <hr align="center" size="1">
-   <p><a href="download/ScreenSaverSummonInstall.zip">Main Site</a></p>
+<!--   <p><a href="download/ScreenSaverSummonInstall.zip">Main Site</a></p> -->
+   <p><a href="https://www.dropbox.com/s/mph6wjp06q5wu3s/ScreenSaverSummonInstall.zip?dl=1">Main Site</a></p>
    <p><a href="http://www.brothersoft.com/summon-the-screensaver-55597.html" target="_blank">BrotherSoft.com</a></p>
    <p><a href="http://www.softpedia.com/get/Desktop-Enhancements/Other-Desktop-Enhancements/Summon-the-Screensaver.shtml" target="_blank">Softpedia.com</a></p>
    <p><a href="http://www.softforall.com/Desktop/ShellDesktop/Summon_the_Screensaver03070084.htm" target="_blank">SoftForAll.com</a></p>
@@ -121,12 +75,28 @@ var sc_invisible=1;
 <!-- End of StatCounter Code -->
 </p>
 
-<!----- For handling Tripod's "referer must be itself" problem ----->
-<!--
-<p align="center">
-<iframe name="ifTripodDnld" id="ifTripodDnld" src="blank.html" style="border:none" width="0" height="0" scrolling="no"></iframe>
-</p>
--->
 
+<script type="text/javascript">
+function startDownload(siteName)
+{
+	var url = "#";
+	switch(siteName){	// Javascript allows switch on Strings
+		case "main":
+//			url = "download/ScreenSaverSummonInstall.zip";
+			url = "https://www.dropbox.com/s/mph6wjp06q5wu3s/ScreenSaverSummonInstall.zip?dl=1";
+			break;
+		default:
+			alert("Unexpected download site name.\nPlease download manually by clicking one of the links on this page.");
+	}
+	window.location.href = url;
+}
+
+//var params = getParamsGET();
+//var siteName = unescape(params["siteName"]);
+var params = new URLSearchParams(window.location.search);
+var siteName = params.get('siteName');
+</script>
+
+<script type="text/javascript" src="script/tracking.js"></script>
 </body>
 </html>

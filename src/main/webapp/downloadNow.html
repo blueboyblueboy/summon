@@ -63,15 +63,16 @@ function startDownload(siteName)
 	var url = "#";
 	switch(siteName){	// Javascript allows switch on Strings
 		case "main":
-			url = "download/ScreenSaverSummonInstall.zip";
+//			url = "download/ScreenSaverSummonInstall.zip";
+			url = "https://www.dropbox.com/s/mph6wjp06q5wu3s/ScreenSaverSummonInstall.zip?dl=1";
 			break;
-		case "mirror1":
-	                url = "#";
-                        //// For handling Tripod's "referer must be itself" problem
-                        //frames['ifTripodDnld'].location.href = "http://members.tripod.com/my_world_1/summon/downloadNow2.html";
-                        //ifTripodDnld.src = "http://members.tripod.com/my_world_1/summon/downloadNow2.html";
-	                popUp("http://members.tripod.com/my_world_1/summon/downloadNow2.html");
-			break;
+//		case "mirror1":
+//	                url = "#";
+//                        //// For handling Tripod's "referer must be itself" problem
+//                        //frames['ifTripodDnld'].location.href = "http://members.tripod.com/my_world_1/summon/downloadNow2.html";
+//                        //ifTripodDnld.src = "http://members.tripod.com/my_world_1/summon/downloadNow2.html";
+//	                popUp("http://members.tripod.com/my_world_1/summon/downloadNow2.html");
+//			break;
 		default:
 			alert("Unexpected download site name.\nPlease download manually by clicking one of the links on this page.");
 	}
@@ -96,7 +97,6 @@ var siteName = unescape(params["siteName"]);
    please download manually by clicking one of the links below:</p>
    <hr align="center" size="1">
    <p><a href="download/ScreenSaverSummonInstall.zip">Main Site</a></p>
-   <p><a href="http://members.tripod.com/my_world_1/summon/downloadNow2.html">Mirror Site #1</a></p>
    <p><a href="http://www.brothersoft.com/summon-the-screensaver-55597.html" target="_blank">BrotherSoft.com</a></p>
    <p><a href="http://www.softpedia.com/get/Desktop-Enhancements/Other-Desktop-Enhancements/Summon-the-Screensaver.shtml" target="_blank">Softpedia.com</a></p>
    <p><a href="http://www.softforall.com/Desktop/ShellDesktop/Summon_the_Screensaver03070084.htm" target="_blank">SoftForAll.com</a></p>
